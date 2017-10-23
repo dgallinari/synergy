@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -22,6 +22,7 @@
 #include "common/stdstring.h"
 
 #include <stdarg.h>
+#include <vector>
 
 // use standard C++ string class for our string class
 typedef std::string String;
@@ -100,28 +101,34 @@ Convert an a \c string to an size type
 */
 size_t stringToSizeType(String string);
 
+//! Split a string into substrings
+/*!
+Split a \c string that separated by a \c c into substrings
+*/
+std::vector<String> splitString(String string, const char c);
+
 //! Case-insensitive comparisons
 /*!
 This class provides case-insensitve comparison functions.
 */
 class CaselessCmp {
-	public:
-	//! Same as less()
-	bool			operator()(const String& a, const String& b) const;
+    public:
+    //! Same as less()
+    bool            operator()(const String& a, const String& b) const;
 
-	//! Returns true iff \c a is lexicographically less than \c b
-	static bool		less(const String& a, const String& b);
+    //! Returns true iff \c a is lexicographically less than \c b
+    static bool        less(const String& a, const String& b);
 
-	//! Returns true iff \c a is lexicographically equal to \c b
-	static bool		equal(const String& a, const String& b);
+    //! Returns true iff \c a is lexicographically equal to \c b
+    static bool        equal(const String& a, const String& b);
 
-	//! Returns true iff \c a is lexicographically less than \c b
-	static bool		cmpLess(const String::value_type& a,
-						const String::value_type& b);
+    //! Returns true iff \c a is lexicographically less than \c b
+    static bool        cmpLess(const String::value_type& a,
+                        const String::value_type& b);
 
-	//! Returns true iff \c a is lexicographically equal to \c b
-	static bool		cmpEqual(const String::value_type& a,
-						const String::value_type& b);
+    //! Returns true iff \c a is lexicographically equal to \c b
+    static bool        cmpEqual(const String::value_type& a,
+                        const String::value_type& b);
 };
 
 }

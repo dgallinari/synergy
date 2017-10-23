@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -24,10 +24,10 @@
 void
 ArchConsoleStd::writeConsole(ELevel level, const char* str)
 {
-	if ((level >= kFATAL) && (level <= kWARNING))
-		std::cerr << str << std::endl;
-	else
-		std::cout << str << std::endl;
+    if ((level >= kFATAL) && (level <= kWARNING))
+        std::cerr << str << std::endl;
+    else
+        std::cout << str << std::endl;
 
-	std::cout.flush();
+    std::cout.flush();
 }

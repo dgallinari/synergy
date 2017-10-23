@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2012 Nick Bolton
  * 
  * This package is free software; you can redistribute it and/or
@@ -18,11 +18,11 @@
 
 #pragma once
 
-#include "QObject.h"
+#include "qobject.h"
 
 class VersionCheckerTests : public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
 private slots:
-	void compareVersions();
+    void compareVersions();
 };

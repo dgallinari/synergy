@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2012 Nick Bolton
  *
  * This package is free software; you can redistribute it and/or
@@ -18,7 +18,7 @@
 
 #include "ipc/Ipc.h"
 
-const char*				kIpcMsgHello		= "IHEL%1i";
-const char*				kIpcMsgLogLine		= "ILOG%s";
-const char*				kIpcMsgCommand		= "ICMD%s%1i";
-const char*				kIpcMsgShutdown		= "ISDN";
+const char*                kIpcMsgHello        = "IHEL%1i";
+const char*                kIpcMsgLogLine        = "ILOG%s";
+const char*                kIpcMsgCommand        = "ICMD%s%1i";
+const char*                kIpcMsgShutdown        = "ISDN";

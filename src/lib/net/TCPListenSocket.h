@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -32,30 +32,29 @@ A listen socket using TCP.
 */
 class TCPListenSocket : public IListenSocket {
 public:
-	TCPListenSocket(IEventQueue* events, SocketMultiplexer* socketMultiplexer);
-	virtual ~TCPListenSocket();
+    TCPListenSocket(IEventQueue* events, SocketMultiplexer* socketMultiplexer);
+    virtual ~TCPListenSocket();
 
-	// ISocket overrides
-	virtual void		bind(const NetworkAddress&);
-	virtual void		close();
-	virtual void*		getEventTarget() const;
+    // ISocket overrides
+    virtual void        bind(const NetworkAddress&);
+    virtual void        close();
+    virtual void*        getEventTarget() const;
 
-	// IListenSocket overrides
-	virtual IDataSocket*
-						accept();
-	virtual void		deleteSocket(void*) { }
+    // IListenSocket overrides
+    virtual IDataSocket*
+                        accept();
 
 protected:
-	void				setListeningJob();
+    void                setListeningJob();
 
 public:
-	ISocketMultiplexerJob*
-						serviceListening(ISocketMultiplexerJob*,
-							bool, bool, bool);
+    ISocketMultiplexerJob*
+                        serviceListening(ISocketMultiplexerJob*,
+                            bool, bool, bool);
 
 protected:
-	ArchSocket			m_socket;
-	Mutex*				m_mutex;
-	IEventQueue*		m_events;
-	SocketMultiplexer*	m_socketMultiplexer;
+    ArchSocket            m_socket;
+    Mutex*                m_mutex;
+    IEventQueue*        m_events;
+    SocketMultiplexer*    m_socketMultiplexer;
 };

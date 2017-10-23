@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -23,20 +23,20 @@
 //! Convert to/from UTF-8 encoding
 class XWindowsClipboardUTF8Converter : public IXWindowsClipboardConverter {
 public:
-	/*!
-	\c name is converted to an atom and that is reported by getAtom().
-	*/
-	XWindowsClipboardUTF8Converter(Display* display, const char* name);
-	virtual ~XWindowsClipboardUTF8Converter();
+    /*!
+    \c name is converted to an atom and that is reported by getAtom().
+    */
+    XWindowsClipboardUTF8Converter(Display* display, const char* name);
+    virtual ~XWindowsClipboardUTF8Converter();
 
-	// IXWindowsClipboardConverter overrides
-	virtual IClipboard::EFormat
-						getFormat() const;
-	virtual Atom		getAtom() const;
-	virtual int			getDataSize() const;
-	virtual String		fromIClipboard(const String&) const;
-	virtual String		toIClipboard(const String&) const;
+    // IXWindowsClipboardConverter overrides
+    virtual IClipboard::EFormat
+                        getFormat() const;
+    virtual Atom        getAtom() const;
+    virtual int            getDataSize() const;
+    virtual String        fromIClipboard(const String&) const;
+    virtual String        toIClipboard(const String&) const;
 
 private:
-	Atom				m_atom;
+    Atom                m_atom;
 };

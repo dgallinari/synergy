@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2004 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -25,15 +25,15 @@
 //! Win32 implementation of IArchString
 class ArchSystemWindows : public IArchSystem {
 public:
-	ArchSystemWindows();
-	virtual ~ArchSystemWindows();
+    ArchSystemWindows();
+    virtual ~ArchSystemWindows();
 
-	// IArchSystem overrides
-	virtual std::string	getOSName() const;
-	virtual std::string getPlatformName() const;
-	virtual std::string setting(const std::string& valueName) const;
-	virtual void setting(const std::string& valueName, const std::string& valueString) const;
-	virtual std::string getLibsUsed(void) const;
+    // IArchSystem overrides
+    virtual std::string    getOSName() const;
+    virtual std::string getPlatformName() const;
+    virtual std::string setting(const std::string& valueName) const;
+    virtual void setting(const std::string& valueName, const std::string& valueString) const;
+    virtual std::string getLibsUsed(void) const;
 
-	bool isWOW64() const;
+    bool isWOW64() const;
 };

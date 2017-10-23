@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -26,14 +26,14 @@ A job class that invokes a function.
 */
 class FunctionJob : public IJob {
 public:
-	//! run() invokes \c func(arg)
-	FunctionJob(void (*func)(void*), void* arg = NULL);
-	virtual ~FunctionJob();
+    //! run() invokes \c func(arg)
+    FunctionJob(void (*func)(void*), void* arg = NULL);
+    virtual ~FunctionJob();
 
-	// IJob overrides
-	virtual void		run();
+    // IJob overrides
+    virtual void        run();
 
 private:
-	void				(*m_func)(void*);
-	void*				m_arg;
+    void                (*m_func)(void*);
+    void*                m_arg;
 };

@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -25,7 +25,7 @@
 String
 XIOClosed::getWhat() const throw()
 {
-	return format("XIOClosed", "already closed");
+    return format("XIOClosed", "already closed");
 }
 
 
@@ -36,7 +36,7 @@ XIOClosed::getWhat() const throw()
 String
 XIOEndOfStream::getWhat() const throw()
 {
-	return format("XIOEndOfStream", "reached end of stream");
+    return format("XIOEndOfStream", "reached end of stream");
 }
 
 
@@ -47,5 +47,5 @@ XIOEndOfStream::getWhat() const throw()
 String
 XIOWouldBlock::getWhat() const throw()
 {
-	return format("XIOWouldBlock", "stream operation would block");
+    return format("XIOWouldBlock", "stream operation would block");
 }

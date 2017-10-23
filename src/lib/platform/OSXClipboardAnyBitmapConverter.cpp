@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2014 Synergy Si Ltd.
+ * Copyright (C) 2014-2016 Symless Ltd.
  * Patch by Ryan Chapman
  *
  * This package is free software; you can redistribute it and/or
@@ -21,28 +21,28 @@
 
 OSXClipboardAnyBitmapConverter::OSXClipboardAnyBitmapConverter()
 {
-	// do nothing
+    // do nothing
 }
 
 OSXClipboardAnyBitmapConverter::~OSXClipboardAnyBitmapConverter()
 {
-	// do nothing
+    // do nothing
 }
 
 IClipboard::EFormat
 OSXClipboardAnyBitmapConverter::getFormat() const
 {
-	return IClipboard::kBitmap;
+    return IClipboard::kBitmap;
 }
 
 String
 OSXClipboardAnyBitmapConverter::fromIClipboard(const String& data) const
 {
-	return doFromIClipboard(data);
+    return doFromIClipboard(data);
 }
 
 String
 OSXClipboardAnyBitmapConverter::toIClipboard(const String& data) const
 {
-	return doToIClipboard(data);
+    return doToIClipboard(data);
 }

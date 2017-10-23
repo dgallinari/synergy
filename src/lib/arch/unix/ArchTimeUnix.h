@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -25,9 +25,9 @@
 //! Generic Unix implementation of IArchTime
 class ArchTimeUnix : public IArchTime {
 public:
-	ArchTimeUnix();
-	virtual ~ArchTimeUnix();
+    ArchTimeUnix();
+    virtual ~ArchTimeUnix();
 
-	// IArchTime overrides
-	virtual double		time();
+    // IArchTime overrides
+    virtual double        time();
 };

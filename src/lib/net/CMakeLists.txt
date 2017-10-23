@@ -1,5 +1,5 @@
 # synergy -- mouse and keyboard sharing utility
-# Copyright (C) 2012 Synergy Si Ltd.
+# Copyright (C) 2012-2016 Symless Ltd.
 # Copyright (C) 2009 Nick Bolton
 # 
 # This package is free software; you can redistribute it and/or
@@ -18,21 +18,11 @@ file(GLOB headers "*.h")
 file(GLOB sources "*.cpp")
 
 if (SYNERGY_ADD_HEADERS)
-	list(APPEND sources ${headers})
-endif()
-
-include_directories(
-	../
-)
-
-if (UNIX)
-	include_directories(
-		../../..
-	)
+    list(APPEND sources ${headers})
 endif()
 
 add_library(net STATIC ${sources})
 
 if (UNIX)
-	target_link_libraries(net mt io)
+    target_link_libraries(net mt io ${OPENSSL_LIBS})
 endif()

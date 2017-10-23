@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -30,14 +30,14 @@ create sockets.
 */
 class ISocketFactory : public IInterface {
 public:
-	//! @name accessors
-	//@{
+    //! @name accessors
+    //@{
 
-	//! Create data socket
-	virtual IDataSocket*	create(bool secure) const = 0;
+    //! Create data socket
+    virtual IDataSocket*    create(bool secure) const = 0;
 
-	//! Create listen socket
-	virtual IListenSocket*	createListen(bool secure) const = 0;
+    //! Create listen socket
+    virtual IListenSocket*    createListen(bool secure) const = 0;
 
-	//@}
+    //@}
 };

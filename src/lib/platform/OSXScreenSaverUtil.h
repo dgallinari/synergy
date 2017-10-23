@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -24,16 +24,16 @@
 extern "C" {
 #endif
 
-void*					screenSaverUtilCreatePool();
-void					screenSaverUtilReleasePool(void*);
+void*                    screenSaverUtilCreatePool();
+void                    screenSaverUtilReleasePool(void*);
 
-void*					screenSaverUtilCreateController();
-void					screenSaverUtilReleaseController(void*);
-void					screenSaverUtilEnable(void*);
-void					screenSaverUtilDisable(void*);
-void					screenSaverUtilActivate(void*);
-void					screenSaverUtilDeactivate(void*, int isEnabled);
-int						screenSaverUtilIsActive(void*);
+void*                    screenSaverUtilCreateController();
+void                    screenSaverUtilReleaseController(void*);
+void                    screenSaverUtilEnable(void*);
+void                    screenSaverUtilDisable(void*);
+void                    screenSaverUtilActivate(void*);
+void                    screenSaverUtilDeactivate(void*, int isEnabled);
+int                        screenSaverUtilIsActive(void*);
 
 #if defined(__cplusplus)
 }

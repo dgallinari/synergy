@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2003 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -18,7 +18,7 @@
 
 #pragma once
 
-#include "synergy/KeyState.h"
+#include "core/KeyState.h"
 #include "base/String.h"
 #include "common/stdvector.h"
 
@@ -122,7 +122,7 @@ public:
 	(button should include the extended key bit), or kKeyNone if there is
 	no such key.
 	*/
-	static KeyID		getKeyID(UINT virtualKey, KeyButton button);
+	KeyID				getKeyID(UINT virtualKey, KeyButton button) const;
 
 	//! Map button to virtual key
 	/*!

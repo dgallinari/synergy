@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -26,16 +26,16 @@ class SocketMultiplexer;
 //! Socket factory for TCP sockets
 class TCPSocketFactory : public ISocketFactory {
 public:
-	TCPSocketFactory(IEventQueue* events, SocketMultiplexer* socketMultiplexer);
-	virtual ~TCPSocketFactory();
+    TCPSocketFactory(IEventQueue* events, SocketMultiplexer* socketMultiplexer);
+    virtual ~TCPSocketFactory();
 
-	// ISocketFactory overrides
-	virtual IDataSocket*
-						create(bool secure) const;
-	virtual IListenSocket*
-						createListen(bool secure) const;
+    // ISocketFactory overrides
+    virtual IDataSocket*
+                        create(bool secure) const;
+    virtual IListenSocket*
+                        createListen(bool secure) const;
 
 private:
-	IEventQueue*		m_events;
-	SocketMultiplexer*	m_socketMultiplexer;
+    IEventQueue*        m_events;
+    SocketMultiplexer*    m_socketMultiplexer;
 };

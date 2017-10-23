@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2014 Synergy Si Ltd.
+ * Copyright (C) 2014-2016 Symless Ltd.
  * Patch by Ryan Chapman
  *
  * This package is free software; you can redistribute it and/or
@@ -23,22 +23,22 @@
 //! Convert to/from HTML encoding
 class OSXClipboardHTMLConverter : public OSXClipboardAnyTextConverter {
 public:
-	OSXClipboardHTMLConverter();
-	virtual ~OSXClipboardHTMLConverter();
+    OSXClipboardHTMLConverter();
+    virtual ~OSXClipboardHTMLConverter();
 
-	// IMSWindowsClipboardConverter overrides
-	virtual IClipboard::EFormat
-						getFormat() const;
+    // IMSWindowsClipboardConverter overrides
+    virtual IClipboard::EFormat
+                        getFormat() const;
 
-	virtual CFStringRef	getOSXFormat() const;
+    virtual CFStringRef    getOSXFormat() const;
 
 protected:
-	// OSXClipboardAnyTextConverter overrides
-	virtual String		doFromIClipboard(const String&) const;
-	virtual String		doToIClipboard(const String&) const;
+    // OSXClipboardAnyTextConverter overrides
+    virtual String        doFromIClipboard(const String&) const;
+    virtual String        doToIClipboard(const String&) const;
 
-	// generic encoding converter
-	static String		convertString(const String& data,
-							CFStringEncoding fromEncoding,
-							CFStringEncoding toEncoding);
+    // generic encoding converter
+    static String        convertString(const String& data,
+                            CFStringEncoding fromEncoding,
+                            CFStringEncoding toEncoding);
 };

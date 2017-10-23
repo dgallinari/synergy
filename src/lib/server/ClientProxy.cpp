@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -18,7 +18,7 @@
 
 #include "server/ClientProxy.h"
 
-#include "synergy/ProtocolUtil.h"
+#include "core/ProtocolUtil.h"
 #include "io/IStream.h"
 #include "base/Log.h"
 #include "base/EventQueue.h"
@@ -28,34 +28,34 @@
 //
 
 ClientProxy::ClientProxy(const String& name, synergy::IStream* stream) :
-	BaseClientProxy(name),
-	m_stream(stream)
+    BaseClientProxy(name),
+    m_stream(stream)
 {
 }
 
 ClientProxy::~ClientProxy()
 {
-	delete m_stream;
+    delete m_stream;
 }
 
 void
 ClientProxy::close(const char* msg)
 {
-	LOG((CLOG_DEBUG1 "send close \"%s\" to \"%s\"", msg, getName().c_str()));
-	ProtocolUtil::writef(getStream(), msg);
+    LOG((CLOG_DEBUG1 "send close \"%s\" to \"%s\"", msg, getName().c_str()));
+    ProtocolUtil::writef(getStream(), msg);
 
-	// force the close to be sent before we return
-	getStream()->flush();
+    // force the close to be sent before we return
+    getStream()->flush();
 }
 
 synergy::IStream*
 ClientProxy::getStream() const
 {
-	return m_stream;
+    return m_stream;
 }
 
 void*
 ClientProxy::getEventTarget() const
 {
-	return static_cast<IScreen*>(const_cast<ClientProxy*>(this));
+    return static_cast<IScreen*>(const_cast<ClientProxy*>(this));
 }

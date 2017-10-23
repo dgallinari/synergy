@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -29,8 +29,8 @@ class IMSWindowsClipboardConverter;
 class IMSWindowsClipboardFacade : public IInterface
 {
 public:
-	virtual void write(HANDLE win32Data, UINT win32Format) = 0;
-	virtual ~IMSWindowsClipboardFacade() { }
+    virtual void write(HANDLE win32Data, UINT win32Format) = 0;
+    virtual ~IMSWindowsClipboardFacade() { }
 };
 
 #endif

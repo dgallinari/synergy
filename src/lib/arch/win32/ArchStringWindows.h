@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -25,10 +25,10 @@
 //! Win32 implementation of IArchString
 class ArchStringWindows : public IArchString {
 public:
-	ArchStringWindows();
-	virtual ~ArchStringWindows();
+    ArchStringWindows();
+    virtual ~ArchStringWindows();
 
-	// IArchString overrides
-	virtual EWideCharEncoding
-						getWideCharEncoding();
+    // IArchString overrides
+    virtual EWideCharEncoding
+                        getWideCharEncoding();
 };

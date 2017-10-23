@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -28,10 +28,10 @@ XThreadExit, XThread, or ...).
 */
 class XThreadExit : public XThread {
 public:
-	//! \c result is the result of the thread
-	XThreadExit(void* result) : m_result(result) { }
-	~XThreadExit() { }
+    //! \c result is the result of the thread
+    XThreadExit(void* result) : m_result(result) { }
+    ~XThreadExit() { }
 
 public:
-	void*				m_result;
+    void*                m_result;
 };

@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2004 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -22,15 +22,15 @@
 
 //! Convert to/from some text encoding
 class MSWindowsClipboardBitmapConverter :
-				public IMSWindowsClipboardConverter {
+                public IMSWindowsClipboardConverter {
 public:
-	MSWindowsClipboardBitmapConverter();
-	virtual ~MSWindowsClipboardBitmapConverter();
+    MSWindowsClipboardBitmapConverter();
+    virtual ~MSWindowsClipboardBitmapConverter();
 
-	// IMSWindowsClipboardConverter overrides
-	virtual IClipboard::EFormat
-						getFormat() const;
-	virtual UINT		getWin32Format() const;
-	virtual HANDLE		fromIClipboard(const String&) const;
-	virtual String		toIClipboard(HANDLE) const;
+    // IMSWindowsClipboardConverter overrides
+    virtual IClipboard::EFormat
+                        getFormat() const;
+    virtual UINT        getWin32Format() const;
+    virtual HANDLE        fromIClipboard(const String&) const;
+    virtual String        toIClipboard(HANDLE) const;
 };

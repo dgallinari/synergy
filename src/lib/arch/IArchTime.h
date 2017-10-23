@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -27,15 +27,15 @@ synergy.  Each architecture must implement this interface.
 */
 class IArchTime : public IInterface {
 public:
-	//! @name manipulators
-	//@{
+    //! @name manipulators
+    //@{
 
-	//! Get the current time
-	/*!
-	Returns the number of seconds since some arbitrary starting time.
-	This should return as high a precision as reasonable.
-	*/
-	virtual double		time() = 0;
+    //! Get the current time
+    /*!
+    Returns the number of seconds since some arbitrary starting time.
+    This should return as high a precision as reasonable.
+    */
+    virtual double        time() = 0;
 
-	//@}
+    //@}
 };

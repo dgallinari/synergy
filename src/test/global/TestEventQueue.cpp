@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2013 Synergy Si Ltd.
+ * Copyright (C) 2013-2016 Symless Ltd.
  * 
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -25,29 +25,29 @@
 void
 TestEventQueue::raiseQuitEvent() 
 {
-	addEvent(Event(Event::kQuit));
+    addEvent(Event(Event::kQuit));
 }
 
 void
 TestEventQueue::initQuitTimeout(double timeout)
 {
-	assert(m_quitTimeoutTimer == nullptr);
-	m_quitTimeoutTimer = newOneShotTimer(timeout, NULL);
-	adoptHandler(Event::kTimer, m_quitTimeoutTimer,
-		new TMethodEventJob<TestEventQueue>(
-		this, &TestEventQueue::handleQuitTimeout));
+    assert(m_quitTimeoutTimer == nullptr);
+    m_quitTimeoutTimer = newOneShotTimer(timeout, NULL);
+    adoptHandler(Event::kTimer, m_quitTimeoutTimer,
+        new TMethodEventJob<TestEventQueue>(
+        this, &TestEventQueue::handleQuitTimeout));
 }
 
 void
 TestEventQueue::cleanupQuitTimeout()
 {
-	removeHandler(Event::kTimer, m_quitTimeoutTimer);
-	delete m_quitTimeoutTimer;
-	m_quitTimeoutTimer = nullptr;
+    removeHandler(Event::kTimer, m_quitTimeoutTimer);
+    delete m_quitTimeoutTimer;
+    m_quitTimeoutTimer = nullptr;
 }
 
 void
 TestEventQueue::handleQuitTimeout(const Event&, void* vclient)
 {
-	throw std::runtime_error("test event queue timeout");
+    throw std::runtime_error("test event queue timeout");
 }

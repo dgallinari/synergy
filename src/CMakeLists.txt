@@ -1,5 +1,5 @@
 # synergy -- mouse and keyboard sharing utility
-# Copyright (C) 2012 Synergy Si Ltd.
+# Copyright (C) 2012-2016 Symless Ltd.
 # Copyright (C) 2011 Nick Bolton
 # 
 # This package is free software; you can redistribute it and/or
@@ -14,10 +14,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+include_directories (./lib)
+include_directories (${CMAKE_CURRENT_BINARY_DIR}/lib)
+
 add_subdirectory(lib)
 add_subdirectory(cmd)
-add_subdirectory(micro)
-
-if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "IRIX")
-	add_subdirectory(test)
-endif()

@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -24,48 +24,48 @@
 
 ArchDaemonNone::ArchDaemonNone()
 {
-	// do nothing
+    // do nothing
 }
 
 ArchDaemonNone::~ArchDaemonNone()
 {
-	// do nothing
+    // do nothing
 }
 
 void
 ArchDaemonNone::installDaemon(const char*,
-				const char*,
-				const char*,
-				const char*,
-				const char*)
+                const char*,
+                const char*,
+                const char*,
+                const char*)
 {
-	// do nothing
+    // do nothing
 }
 
 void
 ArchDaemonNone::uninstallDaemon(const char*)
 {
-	// do nothing
+    // do nothing
 }
 
 int
 ArchDaemonNone::daemonize(const char* name, DaemonFunc func)
 {
-	// simply forward the call to func.  obviously, this doesn't
-	// do any daemonizing.
-	return func(1, &name);
+    // simply forward the call to func.  obviously, this doesn't
+    // do any daemonizing.
+    return func(1, &name);
 }
 
 bool
 ArchDaemonNone::canInstallDaemon(const char*)
 {
-	return false;
+    return false;
 }
 
 bool
 ArchDaemonNone::isDaemonInstalled(const char*)
 {
-	return false;
+    return false;
 }
 
 void
@@ -81,5 +81,5 @@ ArchDaemonNone::uninstallDaemon()
 std::string
 ArchDaemonNone::commandLine() const
 {
-	return "";
+    return "";
 }

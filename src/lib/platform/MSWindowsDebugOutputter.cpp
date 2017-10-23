@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2012 Nick Bolton
  * 
  * This package is free software; you can redistribute it and/or
@@ -48,8 +48,8 @@ MSWindowsDebugOutputter::show(bool showIfEmpty)
 bool
 MSWindowsDebugOutputter::write(ELevel level, const char* msg)
 {
-	OutputDebugString((std::string(msg) + "\n").c_str());
-	return true;
+    OutputDebugString((std::string(msg) + "\n").c_str());
+    return true;
 }
 
 void

@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2012 Nick Bolton
  * 
  * This package is free software; you can redistribute it and/or
@@ -30,26 +30,26 @@ class IpcHelloMessage;
 class IEventQueue;
 
 class IpcClientProxy {
-	friend class IpcServer;
+    friend class IpcServer;
 
 public:
-	IpcClientProxy(synergy::IStream& stream, IEventQueue* events);
-	virtual ~IpcClientProxy();
+    IpcClientProxy(synergy::IStream& stream, IEventQueue* events);
+    virtual ~IpcClientProxy();
 
 private:
-	void				send(const IpcMessage& message);
-	void				handleData(const Event&, void*);
-	void				handleDisconnect(const Event&, void*);
-	void				handleWriteError(const Event&, void*);
-	IpcHelloMessage*	parseHello();
-	IpcCommandMessage*	parseCommand();
-	void				disconnect();
-	
+    void                send(const IpcMessage& message);
+    void                handleData(const Event&, void*);
+    void                handleDisconnect(const Event&, void*);
+    void                handleWriteError(const Event&, void*);
+    IpcHelloMessage*    parseHello();
+    IpcCommandMessage*    parseCommand();
+    void                disconnect();
+    
 private:
-	synergy::IStream&	m_stream;
-	EIpcClientType		m_clientType;
-	bool				m_disconnecting;
-	ArchMutex			m_readMutex;
-	ArchMutex			m_writeMutex;
-	IEventQueue*		m_events;
+    synergy::IStream&    m_stream;
+    EIpcClientType        m_clientType;
+    bool                m_disconnecting;
+    ArchMutex            m_readMutex;
+    ArchMutex            m_writeMutex;
+    IEventQueue*        m_events;
 };

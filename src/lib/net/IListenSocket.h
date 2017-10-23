@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -30,29 +30,22 @@ listen for incoming connections.
 */
 class IListenSocket : public ISocket {
 public:
-	//! @name manipulators
-	//@{
+    //! @name manipulators
+    //@{
 
-	//! Accept connection
-	/*!
-	Accept a connection, returning a socket representing the full-duplex
-	data stream.  Returns NULL if no socket is waiting to be accepted.
-	This is only valid after a call to \c bind().
-	*/
-	virtual IDataSocket*
-						accept() = 0;
+    //! Accept connection
+    /*!
+    Accept a connection, returning a socket representing the full-duplex
+    data stream.  Returns NULL if no socket is waiting to be accepted.
+    This is only valid after a call to \c bind().
+    */
+    virtual IDataSocket*
+                        accept() = 0;
+    
+    //@}
 
-	//! Delete connection socket
-	/*!
-	This is used when the socket was created but not adopted by a client
-	proxy.
-	*/
-	virtual void		deleteSocket(void*) = 0;
-
-	//@}
-
-	// ISocket overrides
-	virtual void		bind(const NetworkAddress&) = 0;
-	virtual void		close() = 0;
-	virtual void*		getEventTarget() const = 0;
+    // ISocket overrides
+    virtual void        bind(const NetworkAddress&) = 0;
+    virtual void        close() = 0;
+    virtual void*        getEventTarget() const = 0;
 };

@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -19,8 +19,8 @@
 #include "server/Config.h"
 
 #include "server/Server.h"
-#include "synergy/KeyMap.h"
-#include "synergy/key_types.h"
+#include "core/KeyMap.h"
+#include "core/key_types.h"
 #include "net/XSocket.h"
 #include "base/IEventQueue.h"
 #include "common/stdistream.h"
@@ -765,6 +765,10 @@ Config::readSectionOptions(ConfigReadContext& s)
 		else if (name == "win32KeepForeground") {
 			addOption("", kOptionWin32KeepForeground, s.parseBoolean(value));
 		}
+		else if (name == "clipboardSharing") {
+			addOption("", kOptionClipboardSharing, s.parseBoolean(value));
+		}
+
 		else {
 			handled = false;
 		}
@@ -1376,6 +1380,9 @@ Config::getOptionName(OptionID id)
 	if (id == kOptionScreenPreserveFocus) {
 		return "preserveFocus";
 	}
+	if (id == kOptionClipboardSharing) {
+		return "clipboardSharing";
+	}
 	return NULL;
 }
 
@@ -1392,7 +1399,8 @@ Config::getOptionValue(OptionID id, OptionValue value)
 		id == kOptionXTestXineramaUnaware ||
 		id == kOptionRelativeMouseMoves ||
 		id == kOptionWin32KeepForeground ||
-		id == kOptionScreenPreserveFocus) {
+		id == kOptionScreenPreserveFocus ||
+		id == kOptionClipboardSharing) {
 		return (value != 0) ? "true" : "false";
 	}
 	if (id == kOptionModifierMapForShift ||
@@ -2088,11 +2096,11 @@ ConfigReadContext::parseInterval(const ArgList& args) const
 	}
 
 	char* end;
-	long startValue = strtol(args[0].c_str(), &end, 10);
+	double startValue = strtod(args[0].c_str(), &end);
 	if (end[0] != '\0') {
 		throw XConfigRead(*this, "invalid interval \"%{1}\"", concatArgs(args));
 	}
-	long endValue = strtol(args[1].c_str(), &end, 10);
+	double endValue = strtod(args[1].c_str(), &end);
 	if (end[0] != '\0') {
 		throw XConfigRead(*this, "invalid interval \"%{1}\"", concatArgs(args));
 	}

@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2014 Synergy Si Ltd.
+ * Copyright (C) 2014-2016 Symless Ltd.
  * 
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -22,7 +22,7 @@
 // is that everything in the header file following this also has warnings
 // ignored, so we need to put it in a separate header file.
 #if __APPLE__
-#	pragma GCC system_header
+#    pragma GCC system_header
 #endif
 
 // gmock includes gtest which has a warning on osx106 (signed/unsigned

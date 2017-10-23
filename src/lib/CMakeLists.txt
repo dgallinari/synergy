@@ -1,5 +1,5 @@
 # synergy -- mouse and keyboard sharing utility
-# Copyright (C) 2012 Synergy Si Ltd.
+# Copyright (C) 2012-2016 Symless Ltd.
 # Copyright (C) 2009 Nick Bolton
 # 
 # This package is free software; you can redistribute it and/or
@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+add_subdirectory(core)
 add_subdirectory(arch)
 add_subdirectory(base)
 add_subdirectory(client)
@@ -23,11 +24,9 @@ add_subdirectory(ipc)
 add_subdirectory(mt)
 add_subdirectory(net)
 add_subdirectory(platform)
-add_subdirectory(plugin)
 add_subdirectory(server)
-add_subdirectory(synergy)
-
+add_subdirectory(shared)
 
 if (WIN32)
-	add_subdirectory(synwinhk)
+    add_subdirectory(synwinhk)
 endif()

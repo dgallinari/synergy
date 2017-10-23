@@ -1,5 +1,5 @@
 # synergy -- mouse and keyboard sharing utility
-# Copyright (C) 2012 Synergy Si Ltd.
+# Copyright (C) 2012-2016 Symless Ltd.
 # Copyright (C) 2009 Nick Bolton
 # 
 # This package is free software; you can redistribute it and/or
@@ -15,34 +15,24 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 if (WIN32)
-	file(GLOB headers "MSWindows*.h")
-	file(GLOB sources "MSWindows*.cpp")
+    file(GLOB headers "MSWindows*.h")
+    file(GLOB sources "MSWindows*.cpp")
 elseif (APPLE)
-	file(GLOB headers "OSX*.h")
-	file(GLOB sources "OSX*.cpp" "OSX*.m")
+    file(GLOB headers "OSX*.h" "IOSX*.h")
+    file(GLOB sources "OSX*.cpp" "IOSX*.cpp" "OSX*.m" "OSX*.mm")
 elseif (UNIX)
-	file(GLOB headers "XWindows*.h")
-	file(GLOB sources "XWindows*.cpp")
+    file(GLOB headers "XWindows*.h")
+    file(GLOB sources "XWindows*.cpp")
 endif()
 
 if (SYNERGY_ADD_HEADERS)
-	list(APPEND sources ${headers})
-endif()
-
-include_directories(
-	../
-)
-
-if (UNIX)
-	include_directories(
-		../../..
-	)
+    list(APPEND sources ${headers})
 endif()
 
 if (APPLE)
-	list(APPEND inc
-		/System/Library/Frameworks
-	)
+    list(APPEND inc
+        /System/Library/Frameworks
+    )
 endif()
 
 include_directories(${inc})
@@ -50,10 +40,10 @@ add_library(platform STATIC ${sources})
 target_link_libraries(platform client ${libs})
 
 if (UNIX)
-	target_link_libraries(platform io net ipc synergy client ${libs})
+    target_link_libraries(platform io net ipc core client ${libs})
 endif()
 
 if (APPLE)
-	find_library(COCOA_LIBRARY Cocoa)
-	target_link_libraries(platform ${COCOA_LIBRARY})
+    find_library(COCOA_LIBRARY Cocoa)
+    target_link_libraries(platform ${COCOA_LIBRARY})
 endif()

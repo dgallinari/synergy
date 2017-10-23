@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2014 Synergy Si Ltd.
+ * Copyright (C) 2014-2016 Symless Ltd.
  *
  * This package is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -19,19 +19,19 @@
 
 #include "test/global/gtest.h"
 
-#define TEST_URL "https://synergy-project.org/tests/?testString"
+#define TEST_URL "https://symless.com/tests/?testString"
 //#define TEST_URL "http://localhost/synergy/tests/?testString"
 
 TEST(ArchInternetTests, get)
 {
-	ARCH_INTERNET internet;
-	String result = internet.get(TEST_URL);
-	ASSERT_EQ("Hello world!", result);
+    ARCH_INTERNET internet;
+    String result = internet.get(TEST_URL);
+    ASSERT_EQ("Hello world!", result);
 }
 
 TEST(ArchInternetTests, urlEncode)
 {
-	ARCH_INTERNET internet;
-	String result = internet.urlEncode("hello=+&world");
-	ASSERT_EQ("hello%3D%2B%26world", result);
+    ARCH_INTERNET internet;
+    String result = internet.urlEncode("hello=+&world");
+    ASSERT_EQ("hello%3D%2B%26world", result);
 }

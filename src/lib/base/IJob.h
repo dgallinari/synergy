@@ -1,6 +1,6 @@
 /*
  * synergy -- mouse and keyboard sharing utility
- * Copyright (C) 2012 Synergy Si Ltd.
+ * Copyright (C) 2012-2016 Symless Ltd.
  * Copyright (C) 2002 Chris Schoeneman
  * 
  * This package is free software; you can redistribute it and/or
@@ -26,6 +26,6 @@ A job is an interface for executing some function.
 */
 class IJob : public IInterface {
 public:
-	//! Run the job
-	virtual void		run() = 0;
+    //! Run the job
+    virtual void        run() = 0;
 };
